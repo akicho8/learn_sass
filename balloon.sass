@@ -1,0 +1,74 @@
+// 吹き出し
+
+@import "compass/utilities/general/clearfix"
+
+$balloon_backround: #333        // 背景
+$balloon_text:      #fff        // テキスト色
+$balloon_border:    #fff        // ボーダー色
+
+$balloon_width: 250px           // バルーン本体の幅
+
+$balloon_triangle_top:   22px   // △を上からどれだけ離すか
+$balloon_triangle_side:  21px   // △を本体から横にどれだけずらすか。$balloon_triangle_width の値によって微調整が必要
+$balloon_triangle_width: 3      // △の幅(△のズレ) 本来1pxのはずだけど斜めにすると0.5pxぐらい細くなってしまうため太めにしている
+
+$triangle_border_tb_size: 8px   // top と bottom を小さくすると横長になり鋭角になるはずだがそうならないときもある(ここは調整が難しい)
+$triangle_border_lr_size: 12px  // △の横の大きさ。大きくすると横長になる
+
+$avatar_balloon_margin: 16px    // アバターとバルーンの幅(△の幅以上)
+
+.avatar_with_balloon
+  .avatar
+    width: 48px
+    height: 64px
+    background: blue
+    @include border-radius(3px)
+
+  .balloon
+    color: $balloon_text
+    padding: 8px
+    width: $balloon_width
+    border: 1px solid $balloon_border
+    background: $balloon_backround
+    position: relative // before と after はここを基点にする
+    @include border-radius(8px)
+
+  .balloon:before, .balloon:after
+    display: block
+    content: ""
+    position: absolute // これで .balloon のところからの相対位置になる
+    top: $balloon_triangle_top
+    border-top:    $triangle_border_tb_size solid transparent
+    border-left:   $triangle_border_lr_size solid transparent
+    border-right:  $triangle_border_lr_size solid transparent
+    border-bottom: $triangle_border_tb_size solid transparent
+
+  // FIXME: ここを動的に生成する
+  .left
+    .avatar
+      float: left
+    .balloon
+      float: left
+      margin-left: $avatar_balloon_margin
+    .balloon:before
+      left: -($balloon_triangle_side + $balloon_triangle_width)
+      border-right: $triangle_border_lr_size solid $balloon_border
+    .balloon:after
+      left: -$balloon_triangle_side
+      border-right: $triangle_border_lr_size solid $balloon_backround
+
+  .right
+    .avatar
+      float: right
+    .balloon
+      float: right
+      margin-right: $avatar_balloon_margin
+    .balloon:before
+      right: -($balloon_triangle_side + $balloon_triangle_width)
+      border-left: $triangle_border_lr_size solid $balloon_border
+    .balloon:after
+      right: -$balloon_triangle_side
+      border-left: $triangle_border_lr_size solid $balloon_backround
+      
+.clearfix
+  @include clearfix

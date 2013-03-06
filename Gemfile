@@ -1,0 +1,6 @@
+source "https://rubygems.org"
+gem "sinatra", :require => "sinatra/base"
+gem "sinatra-contrib", :require => "sinatra/contrib"
+gem "compass"
+gem "sass"
+gem "haml"

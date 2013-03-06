@@ -1,0 +1,6 @@
+%a{:href => "/"}= "INDEX"
+%ul
+  - Pathname.glob("0*").each do |filename|
+    - name = filename.basename(".*")
+    %li
+      %a{:href => "/?id=#{name}"}= name
