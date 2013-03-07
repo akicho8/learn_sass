@@ -1,0 +1,17 @@
+#+OPTIONS: toc:nil num:nil author:nil creator:nil \n:nil |:t
+#+OPTIONS: @:t ::t ^:t -:t f:t *:t <:t
+
+* sass + compass + CSS3 で試行錯誤してできた自分用ライブラリ
+
+  実行手順
+
+  : $ rackup
+  : $ open http://localhost:9292/
+
+** 見れるもの
+
+  - ボーダー付きの吹き出し(左右2バージョン)
+
+** _TODO_
+
+  - ずるいやつの例
