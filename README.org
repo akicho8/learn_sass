@@ -12,6 +12,8 @@
 
   - ボーダー付きの吹き出し(左右2バージョン)
 
+    [[https://raw.github.com/akicho8/learn_sass/master/balloon.png]]
+
 ** _TODO_
 
   - ずるいやつの例

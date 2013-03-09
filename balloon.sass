@@ -16,6 +16,7 @@
 //     .balloon
 //       .balloon_left
 //         .balloon_avatar
+//            %img{src: "avatar.png"}
 //         .balloon_body
 //           ゆうしゃロトの ちをひくものよ！
 //           そなたのくるのをまっておったぞ。
@@ -23,6 +24,7 @@
 //     .balloon
 //       .balloon_right
 //         .balloon_avatar
+//            %img{src: "avatar.png"}
 //         .balloon_body
 //           ああ！ たとえ はなれて いても
 //           ローラは いつも あなたと
@@ -32,7 +34,7 @@ $balloon_triangle_use: true            // 吹き出しの尻尾を表示する�
   
 $balloon_body_backround: #282828       // 吹き出し背景
 $balloon_body_color: #fff              // 吹き出しテキスト色
-$balloon_body_border: #fff             // 吹き出しボーダー色
+$balloon_body_border: #484848          // 吹き出しボーダー色
 $balloon_body_width: 250px             // 吹き出し幅
 $balloon_triangle_slide_v: 12px        // △の上からの位置
 $balloon_triangle_slide_h: 15px        // △の横からの位置($balloon_triangle_width の値によって微調整が必要)
@@ -64,10 +66,9 @@ $balloon_with_avatar_margin: 16px      // アバターと吹き出しの隙間(�
     display: inline-block
 
     .balloon_avatar
-      width: 48px
-      height: 64px
-      background: blue
-      @include border-radius(3px)
+      img
+        width: 48px
+        @include border-radius(3px)
 
     .balloon_body
       position: relative

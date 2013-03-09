@@ -6,6 +6,7 @@ require "compass"
 
 class App < Sinatra::Base
   set :views, Pathname(__FILE__).dirname.join(".").expand_path
+  set :public_folder, Pathname(__FILE__).dirname.join(".").expand_path
 
   configure :development do
     register Sinatra::Reloader

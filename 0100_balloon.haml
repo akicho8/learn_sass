@@ -1,15 +1,19 @@
 .balloon_list
-  .balloon
-    .balloon_left
-      .balloon_avatar
-      .balloon_body
-        ゆうしゃロトの ちをひくものよ！
-        そなたのくるのをまっておったぞ。
-  .balloon_separator
-  .balloon
-    .balloon_right
-      .balloon_avatar
-      .balloon_body
-        ああ！ たとえ はなれて いても
-        ローラは いつも あなたと
-        ともに あります。
+  - 2.times.each do
+    .balloon
+      .balloon_left
+        .balloon_avatar
+          %img{src: "octocat1.png"}
+        .balloon_body
+          おお！ すべては ふるい いいつたえの ままで あった！
+          すなわち そなたこそは ゆうしゃロトの ちをひくもの！
+          そなたこそ このせかいを おさめるに ふさわしい おかた なのじゃ！
+          わしに かわって このくにを おさめてくれるな？
+    .balloon_separator
+    .balloon
+      .balloon_right
+        .balloon_avatar
+          %img{src: "octocat2.png"}
+        .balloon_body
+          いいえ。わたしの おさめる くにが あるなら それは わたしじしんで さがしたいのです
+    .balloon_separator
