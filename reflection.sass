@@ -1,0 +1,42 @@
+// 反射アニメーション
+//
+//  HAML 記述例
+//
+//  .reflaction
+//    %img{src: "image.png"}
+//    .animation
+//
+
+$reflection_speed:   4.0s    // アニメーション速度
+$reflection_color:   blue    // 反射色
+$reflection_rotate:  45deg   // 反射線角度
+
+.reflection
+  position: relative
+  overflow: hidden
+  .animation
+    position: absolute
+    height: 100%
+    width: 20px
+    top: -160px
+    left: 0
+    background-color: $reflection_color
+    opacity: 0
+    -webkit-transform: rotate($reflection_rotate)
+    -webkit-animation: reflection $reflection_speed ease-in-out infinite
+    display: block
+    z-index: 1
+
+@-webkit-keyframes reflection
+  0%
+    -webkit-transform: scale(0) rotate($reflection_rotate)
+    opacity: 0
+  80%
+    -webkit-transform: scale(0) rotate($reflection_rotate)
+    opacity: 0.5
+  81%
+    -webkit-transform: scale(4) rotate($reflection_rotate)
+    opacity: 0.9
+  100%
+    -webkit-transform: scale(50) rotate($reflection_rotate)
+    opacity: 0
