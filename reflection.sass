@@ -22,21 +22,21 @@ $reflection_rotate:  45deg   // 反射線角度
     left: 0
     background-color: $reflection_color
     opacity: 0
-    -webkit-transform: rotate($reflection_rotate)
-    -webkit-animation: reflection $reflection_speed ease-in-out infinite
+    @include transform2d(rotate($reflection_rotate))
+    @include experimental(animation, reflection $reflection_speed ease-in-out infinite)
     display: block
     z-index: 1
 
-@-webkit-keyframes reflection
+@include keyframes(reflection)
   0%
-    -webkit-transform: scale(0) rotate($reflection_rotate)
+    @include transform2d(scale(0) rotate($reflection_rotate))
     opacity: 0
   80%
-    -webkit-transform: scale(0) rotate($reflection_rotate)
+    @include transform2d(scale(0) rotate($reflection_rotate))
     opacity: 0.5
   81%
-    -webkit-transform: scale(4) rotate($reflection_rotate)
+    @include transform2d(scale(4) rotate($reflection_rotate))
     opacity: 0.9
   100%
-    -webkit-transform: scale(50) rotate($reflection_rotate)
+    @include transform2d(scale(50) rotate($reflection_rotate))
     opacity: 0

@@ -3,6 +3,7 @@ require "sinatra/reloader"
 require "sass"
 require "haml"
 require "compass"
+require "animation"
 
 class App < Sinatra::Base
   set :views, Pathname(__FILE__).dirname.join(".").expand_path
